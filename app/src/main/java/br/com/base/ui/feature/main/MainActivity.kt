@@ -1,4 +1,4 @@
-package br.com.base.ui.main
+package br.com.base.ui.feature.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

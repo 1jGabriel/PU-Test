@@ -1,4 +1,4 @@
-package br.com.base.ui.main
+package br.com.base.ui.feature.main
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import br.com.base.R
+import br.com.base.common.extensions.loadImage
+import br.com.base.common.extensions.toPrice
 import br.com.base.data.model.Model
 import kotlinx.android.synthetic.main.list_item.view.*
 
@@ -22,7 +24,12 @@ class MainAdapter : PagedListAdapter<Model, MainAdapter.MainViewHolder>(DIFF_CAL
 
         fun bind(item: Model?) {
             item?.let {
-                itemView.image.text = it.deal_id
+                with(itemView) {
+                    image.loadImage(item.images[0].image)
+                    title.text = it.partner.name
+                    description.text = it.short_title
+                    price.text = it.sale_price.toBigDecimal().toPrice()
+                }
             }
         }
 

@@ -1,9 +1,9 @@
-package br.com.base.ui.main.paging
+package br.com.base.ui.feature.main.paging
 
 import androidx.paging.PositionalDataSource
 import br.com.base.data.Repository
 import br.com.base.data.model.Model
-import br.com.base.ui.main.RequestState
+import br.com.base.data.model.RequestState
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.PublishSubject
 import io.reactivex.subjects.Subject

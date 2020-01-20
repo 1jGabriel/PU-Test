@@ -1,4 +1,4 @@
-package br.com.base.ui.main.paging
+package br.com.base.ui.feature.main.paging
 
 import androidx.paging.DataSource
 import br.com.base.data.Repository
