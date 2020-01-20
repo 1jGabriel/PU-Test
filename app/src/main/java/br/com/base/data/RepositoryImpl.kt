@@ -1,20 +1,18 @@
 package br.com.base.data
 
+import br.com.base.data.model.Model
 import io.reactivex.Single
-import io.reactivex.schedulers.Schedulers
 
 class RepositoryImpl(val service: Service) : Repository {
-    override fun getData(): Single<Any> {
+    override fun getData(): Single<ArrayList<Model>> {
         return service.getCharacters()
-            .subscribeOn(Schedulers.io())
             .map { response ->
                 when {
                     response.isSuccessful -> {
-                        response.body() ?: Any()
+                        response.body()?.response ?: arrayListOf()
                     }
-                    else -> throw  Throwable(response.message())
+                    else -> throw Throwable(response.message())
                 }
-
             }
     }
 }

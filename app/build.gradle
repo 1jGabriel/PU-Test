@@ -18,11 +18,13 @@ android {
     buildTypes {
 
         debug {
-            buildConfigField "String", "SERVER_URL", '"https://rickandmortyapi.com/api/"'
+            buildConfigField "String", "SERVER_URL", '"https://raw.githubusercontent' +
+                    '.com/PeixeUrbano/desafio-android/master/api/"'
         }
 
         release {
-            buildConfigField "String", "SERVER_URL", '"https://rickandmortyapi.com/api/"'
+            buildConfigField "String", "SERVER_URL", '"https://raw.githubusercontent' +
+                    '.com/PeixeUrbano/desafio-android/master/api/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -58,6 +60,9 @@ dependencies {
     //GLIDE
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //PAGING
+    implementation "androidx.paging:paging-runtime:2.1.1"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
