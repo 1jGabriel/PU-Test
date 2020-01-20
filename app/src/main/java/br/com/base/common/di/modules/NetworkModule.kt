@@ -10,9 +10,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 val networkModule = module {
-    single { provideDefaultOkhttpClient() }
-    single { provideRetrofit(get()) }
-    single { provideService(get()) }
+    factory { provideDefaultOkhttpClient() }
+    factory { provideRetrofit(get()) }
+    factory { provideService(get()) }
 }
 
 fun provideDefaultOkhttpClient(): OkHttpClient {
